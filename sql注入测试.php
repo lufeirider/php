@@ -1,8 +1,8 @@
 <?php
-	$id = $_GET['uid'];
+	$uid = $_GET['uid'];
 	$conn=mysql_connect("localhost","root","");
 	mysql_select_db("guest");
-	$re=mysql_query("select * from admin where id=1");
+	$re=mysql_query("select * from admin where id=$uid");
 	$row=mysql_fetch_array($re);
 	echo $row["user"];
 ?>
