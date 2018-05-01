@@ -1,1 +1,0 @@
-Same Origin Method Execution
