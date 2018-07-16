@@ -1,6 +1,7 @@
 <?php
 //burp线程开启100
 //购买次数200，其实账户有10000，只能购买100个
+//pause before retry 重试时间为0
 $con = mysql_connect("localhost","root","root");
 mysql_select_db("jingzheng");
 
