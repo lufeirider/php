@@ -1,20 +1,29 @@
-
 <?php
-$img_path = "";
-if (isset($_POST['submit'])) {
-    if (!move_uploaded_file($_FILES['upload_file']['tmp_name'], __DIR__.'\\'.$_FILES['upload_file']['name'])){
-        $img_path = __DIR__.'\\'.$_FILES['upload_file']['name'];
-    }
-	
-}
-?>
+if($_FILES)
+{
+	if ($_FILES["file"]["error"] > 0) {
+		echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
+	} else {
+		echo "Upload: " . $_FILES["file"]["name"] . "<br />";
+		echo "Type: " . $_FILES["file"]["type"] . "<br />";
+		echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
+		echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br />";
 
-<div>
-    <h3>上传区</h3>
-    <form enctype="multipart/form-data" method="post" action="" onsubmit="">
-        <p>请选择要上传的图片：<p>
-        <input class="input_file" type="file" name="upload_file"/>
-        <input class="button" type="submit" name="submit" value="上传"/>
-    </form>
-	<? echo $img_path;?>
-</div>
+		move_uploaded_file($_FILES["file"]["tmp_name"], $_FILES["file"]["name"]);
+		echo "Stored in: " . "./" . $_FILES["file"]["name"];
+	}
+}
+
+?>
+<html>
+<body>
+
+<form action="upload.php" method="post" enctype="multipart/form-data">
+<label for="file">Filename:</label>
+<input type="file" name="file" id="file" /> 
+<br />
+<input type="submit" name="submit" value="Submit" />
+</form>
+
+</body>
+</html>
