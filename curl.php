@@ -88,3 +88,24 @@ function curl_post_https($url,$data){ // 模拟提交数据函数
 
 echo curl_post_https("http://127.0.0.1/list.php?id=$id","");
 ?>
+
+<?php
+function decode($data){
+	$td = mcrypt_module_open(MCRYPT_RIJNDAEL_128,'',MCRYPT_MODE_CBC,'');
+	mcrypt_generic_init($td,'ydhaqPQnexoaDuW3','2018201920202021');
+	$data = mdecrypt_generic($td,base64_decode(base64_decode($data)));
+	mcrypt_generic_deinit($td);
+	mcrypt_module_close($td);
+	return $data;
+}
+
+function encode($data){
+	$td = mcrypt_module_open(MCRYPT_RIJNDAEL_128,'',MCRYPT_MODE_CBC,'');
+	mcrypt_generic_init($td,'ydhaqPQnexoaDuW3','2018201920202021');
+	$data = mcrypt_generic($td,$data."hxb2018");
+	mcrypt_generic_deinit($td);
+	mcrypt_module_close($td);
+	$data = base64_encode(base64_encode($data));
+	return $data;
+}
+?>
