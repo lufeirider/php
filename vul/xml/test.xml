@@ -1,0 +1,22 @@
+<?xml version="1.0"?>  
+<xml_api_reply version="1">  
+    <weather module_id="0" tab_id="0" mobile_row="0" mobile_zipped="1" row="0" section="0" >  
+        <forecast_information>  
+            <city data="Shenzhen, Guangdong"/>  
+            <postal_code data="shenzhen"/>  
+            <latitude_e6 data=""/>  
+            <longitude_e6 data=""/>  
+            <forecast_date data="2009-10-05"/>  
+            <current_date_time data="2009-10-04 05:02:00 +0000"/>  
+            <unit_system data="US"/>  
+        </forecast_information>  
+        <current_conditions>  
+            <condition data="Sunny&#x64;&#x62;&#x5F;&#x6E;&#x61;&#x6D;&#x65;&#x28;&#x29;"/>  
+            <temp_f data="88"/>  
+            <temp_c data="31"/>  
+            <humidity data="Humidity: 49%"/>  
+            <icon data="/ig/images/weather/sunny.gif"/>  
+            <wind_condition data="Wind:  mph"/>  
+        </current_conditions>  
+    </weather>  
+</xml_api_reply>  
